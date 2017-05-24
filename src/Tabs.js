@@ -1,5 +1,6 @@
 import React from 'react';
 import Ink from 'react-ink';
+import muiThemeable from 'material-ui/styles/muiThemeable';
 import { ClearFix, hoverable } from './utils';
 import { styles, variables, marg } from './styles';
 
@@ -16,9 +17,13 @@ const Tab = hoverable((props) => {
         isHovered,
         onTabClick,
         current,
+        muiTheme,
     } = props;
 
+
     // Tab styles
+    const { primary1Color } = muiTheme.palette;
+    const underlineBackground = color || primary1Color;
     const isActive = index === current;
     const styles = {   
         tab: {
@@ -49,7 +54,7 @@ const Tab = hoverable((props) => {
             left: "0px",
             margin: "auto",
             height: "3px",
-            background: color,
+            background: underlineBackground,
             width: "0%",
             active: isActive ? {
                 width: "100%",
@@ -65,10 +70,9 @@ const Tab = hoverable((props) => {
                 ...styles.tab.active,
                 ...styles.tab.onHover
             }}
-            key={ index }
             onMouseEnter={ onMouseEnter }
             onMouseLeave={ onMouseLeave }
-            onClick={onTabClick.bind(this, index)}
+            onClick={ onTabClick }
         >
                 { item }
                 <div 
@@ -95,13 +99,19 @@ const Tabs = React.createClass({
         onChangeView: React.PropTypes.func
     },
 
+    onTabClick(e) {
+        this.props.onTabClick(e);
+    },
+
     // Tab render cb for tabList.map
     renderTab( item, i) {
         return (
             <Tab
                 { ...this.props }
+                key={ i }
                 item={ item }
                 index={ i }
+                onTabClick={ this.onTabClick.bind(this, i) }
             />
         )
     },
@@ -122,4 +132,4 @@ const Tabs = React.createClass({
     },
 });
 
-export default Tabs;
+export default muiThemeable()(Tabs);
