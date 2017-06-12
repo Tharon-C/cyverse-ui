@@ -252,10 +252,7 @@ const MediaCard = React.createClass({
             opacity: "1",
             ...styles.t.body1,
         };
-        if (this.props.containerWidth <= 750) {
-            style.summary.marginTop = "30px";
-            style.summary.marginRight = "0px";
-        }
+
         if (this.props.isExpanded) {
             style.summary.display = "none";
         }
@@ -296,6 +293,4 @@ const MediaCard = React.createClass({
     }
 });
 
-export default Dimensions({ 
-    containerStyle: { height: 'auto' }
-})(MediaCard);
+export default MediaCard
