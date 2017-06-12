@@ -92,7 +92,7 @@ const MediaCard = React.createClass({
         let avatar = image;
 
         if ( onBatchClick && ( batchMode || avatarIsHovered ) ) {
-            avatar = ( 
+            avatar = (
                 <Checkbox
                     onClick = { this.onCheck }
                     checked = { this.props.checked }
@@ -101,7 +101,7 @@ const MediaCard = React.createClass({
                 />
             )
         }
-        
+
         if (image) {
             return (
                 <div style={ styles.image }>
@@ -119,23 +119,23 @@ const MediaCard = React.createClass({
                 <Hr style = {{ margin: "0px -20px 20px" }}/>
                 { detail }
             </div>
-        ) : null; 
+        ) : null;
     },
 
     render() {
-        const { 
+        const {
             image,
             title,
             subTitle,
             titleInfo,
             summary
         } = this.props;
-        
+
         const styles = this.styles();
 
         return (
             <div style = {this.styles().card} >
-                <div 
+                <div
                     style = { styles.header }
                     onMouseEnter = { this.onCardEnter }
                     onMouseLeave = { this.onCardLeave }
@@ -179,11 +179,14 @@ const MediaCard = React.createClass({
         let style = {};
 
         // card style
-        let cardShadow = styles.boxShadow.li 
+        let cardShadow = styles.boxShadow.li
         let openStyle = {};
         if (this.props.isExpanded) {
             cardShadow = styles.boxShadow.lg
-            openStyle = { margin: "50px -20px" };
+            openStyle = {
+                margin: "40px -20px",
+                borderLeft: "solid 5px #0971ab"
+            };
         }
         style.card = {
             ...openStyle,
@@ -203,20 +206,13 @@ const MediaCard = React.createClass({
             minHeight: "65px",
             alignItems: "center",
         };
-        if (this.props.containerWidth <= 750) {
-            style.header.display = "block"
-        }
 
         // identety style
         style.identity = {
             display: "flex",
             alignItems: "center",
-            minWidth: "250px",
+            minWidth: "300px",
         };
-        if (this.props.containerWidth <= 750) {
-            style.identity.marginRight = "50px";
-        }
-
 
         // image style
         style.image = {
@@ -229,10 +225,10 @@ const MediaCard = React.createClass({
             flexShrink: "0",
             position: "relative",
             marginRight: "10px",
-            alignSelf: "flex-start", 
-            borderRadius: "50%", 
+            alignSelf: "flex-start",
+            borderRadius: "50%",
         };
-        
+
         // title style
         style.title = {
             ...styles.t.body2,
