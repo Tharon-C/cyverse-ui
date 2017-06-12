@@ -21,7 +21,7 @@ export const MeterGauge =React.createClass({
 
     alert() {
         const {
-            alertMessage 
+            alertMessage
         } = this.props;
 
         return this.isOver() ? (
@@ -74,8 +74,11 @@ export const MeterGauge =React.createClass({
             danger = "red"
         } = muiTheme.palette;
 
-        const startColor = this.isOver() ? 
+        const startColor = this.isOver() ?
             danger : success;
+
+        const dataText = this.isOver() ?
+            danger : "#333333";
 
         // Start styles
         const wrapper = {
@@ -85,13 +88,14 @@ export const MeterGauge =React.createClass({
 
         const label = {
             fontSize: "12px",
-            fontWeight: "600",
+            fontWeight: "200",
+            color: "rgba(0, 0, 0, 0.298039)",
             margin: "0 0 10px",
         }
         const data = {
             ...styles.t.caption,
-            color: startColor, 
-            fontSize: "10px",
+            color: dataText,
+            fontSize: "13px",
             margin: "0px 0px 3px",
         }
         const bar = {
