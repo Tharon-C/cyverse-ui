@@ -16,3 +16,4 @@ export { default as SubHeader } from './SubHeader';
 export { default as ButtonMenu } from './ButtonMenu';
 export { default as InfoBlock } from './InfoBlock';
 export { default as SearchBar } from './SearchBar';
+export { default as Identity } from './Identity';
