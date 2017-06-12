@@ -14,3 +14,4 @@ export { default as P } from './P';
 export { default as Title } from './Title';
 export { default as SubHeader } from './SubHeader';
 export { default as ButtonMenu } from './ButtonMenu';
+export { default as InfoBlock } from './InfoBlock';

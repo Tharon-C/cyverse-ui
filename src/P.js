@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles } from './styles';
+import { styles, marg } from './styles';
 
 export default React.createClass({
     render() {
@@ -35,6 +35,7 @@ export default React.createClass({
             lineHeight: "24px",
             margin: "0px",
             marginBottom: "34px",
+            ...marg(this.props),
         }
     }
 });

@@ -10,47 +10,37 @@ const marg = ( props ) => {
     // see cyverse-ui/src/style/README.md
     //
 
+    const returnValue = (value, sizes) => {
+        if (typeof value == "number") {
+            return value === 0 ? 0 : sizes[value -1]
+        } else { 
+            return value
+        }
+    };
+
     return Object.keys(props).reduce((style, prop) => {
         let value = props[prop];
 
         let cssField;
         switch (prop) {
             case "mr":
-                style.marginRight = typeof value == "number"
-                    ? sizes[value - 1]
-                    : value
+                style.marginRight = returnValue(value, sizes);
                 break;
             case "mb":
-                style.marginBottom = typeof value == "number"
-                    ? sizes[value - 1]
-                    : value
+                style.marginBottom = returnValue(value, sizes);
                 break;
             case "ml":
-                style.marginLeft = typeof value == "number"
-                    ? sizes[value - 1]
-                    : value
+                style.marginLeft = returnValue(value, sizes);
                 break;
             case "ms":
-                style.marginRight = typeof value == "number"
-                    ? sizes[value -1]
-                    : value
-                style.marginLeft = typeof value == "number"
-                    ? sizes[value -1]
-                    : value
+                style.marginRight = returnValue(value, sizes);
+                style.marginLeft = returnValue(value, sizes);
                 break;
             case "m":
-                style.marginTop = typeof value == "number"
-                    ? sizes[value -1]
-                    : value
-                style.marginRight = typeof value == "number"
-                    ? sizes[value -1]
-                    : value
-                style.marginBottom = typeof value == "number"
-                    ? sizes[value -1]
-                    : value
-                style.marginLeft = typeof value == "number"
-                    ? sizes[value -1]
-                    : value
+                style.marginTop = returnValue(value, sizes);
+                style.marginRight = returnValue(value, sizes);
+                style.marginBottom = returnValue(value, sizes);
+                style.marginLeft = returnValue(value, sizes);
                 break;
         }
 
