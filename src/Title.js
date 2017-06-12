@@ -4,64 +4,81 @@ import { styles, marg, pad } from './styles';
 const Title = React.createClass({
 
     render() {
+        const {
+            h1, h2, h3, h4, children 
+        } = this.props;
+
         let HTag = 'h1';
 
-        if (this.props.h1) {
+        if (h1) {
             HTag = 'h1';
         }
-        if (this.props.h2) {
+        if (h2) {
             HTag = 'h2';
         }
-        if (this.props.h3) {
+        if (h3) {
             HTag = 'h3';
         }
-        if (this.props.h4) {
+        if (h4) {
             HTag = 'h4';
         }
-            return (
-                <HTag style={ this.styles() }>
-                    { this.props.children }
-                </HTag>
-            )
+
+        return (
+            <HTag style={ this.styles() }>
+                { children }
+            </HTag>
+        )
     },
 
     styles() {
-        let color = this.props.color;
+        const {
+            color,
+            display4,
+            display3,
+            display2,
+            display1,
+            headline,
+            title,
+            subheading,
+            body2,
+        } = this.props;
 
         let fontStyle;
-        if (this.props.display4) {
+        if (display4) {
             fontStyle = styles.t.display4;
         }
 
-        if (this.props.display3) {
+        if (display3) {
             fontStyle = styles.t.display3;
         }
 
-        if (this.props.display2) {
+        if (display2) {
             fontStyle = styles.t.display2;
         }
 
-        if (this.props.display1) {
+        if (display1) {
             fontStyle = styles.t.display1;
         }
 
-        if (this.props.headline) {
+        if (headline) {
             fontStyle = styles.t.headline;
         }
 
-        if (this.props.title) {
+        if (title) {
             fontStyle = styles.t.title;
         }
 
-        let margSize;
-        if (!this.props.noMarg) {
-            margSize = marg({mb: 4})
+        if (subheading) {
+            fontStyle = styles.t.subheading;
+        }
+        if (body2) {
+            fontStyle = styles.t.body2;
         }
 
         return {
             color,
             ...fontStyle,
-            ...margSize,
+            ...marg({mb: 4, mt: 0}),
             ...marg( this.props ),
             ...pad( this.props ),
         }
