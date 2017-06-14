@@ -33,7 +33,7 @@ const Tab = hoverable((props) => {
             position: "relative",
             listStyle: "none",
             padding: "15px 0px",
-            marginRight: "15px",
+            marginRight: "25px",
             textTransform: "uppercase",
             transition: "all 0.2s ease",
             color: v.c.grey.dark,
@@ -117,10 +117,11 @@ const Tabs = React.createClass({
     },
 
     render() {
-        const { tabList } = this.props;
+        const { tabList, ...rest } = this.props;
         const styles = { 
             padding: 0,
             margin: 0,
+            ...marg(rest),
         };
         return (
             <ul style={ styles }>
