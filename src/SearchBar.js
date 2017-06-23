@@ -22,11 +22,11 @@ const SearchBar = React.createClass({
                     position: "relative",
                     marginBottom: "20px",
                     transition: "box-shadow 350ms ease",
-                    ...styles.boxShadow.sm,
+                    ...styles.boxShadow.xsm,
                     ...pad(size),
                     ...marg(this.props),
                     "&:hover": {
-                        ...styles.boxShadow.md
+                        ...styles.boxShadow.sm
                     },
                 },
                 activeCard: {
