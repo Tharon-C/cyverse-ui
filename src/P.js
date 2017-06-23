@@ -28,6 +28,9 @@ export default React.createClass({
         if ( this.props.subheading ) {
             textStyle = styles.t.subheading;
         }
+        if ( this.props.caption ) {
+            textStyle = styles.t.caption;
+        }
 
         return {
             ...textStyle,
