@@ -1,6 +1,5 @@
 import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
-import Dimensions from 'react-dimensions';
 import VerticalMenu from './VerticalMenu';
 import Hr from './Hr';
 import styles from './styles/styles';
@@ -35,7 +34,11 @@ const MediaCard = React.createClass({
     },
 
     onExpand() {
-        this.props.onExpand();
+        const { onExpand } = this.props;
+
+        if (onExpand) {
+            onExpand();
+        }
     },
 
     onCheck(e) {
@@ -128,13 +131,14 @@ const MediaCard = React.createClass({
             title,
             subTitle,
             titleInfo,
-            summary
+            summary,
+            className
         } = this.props;
 
         const styles = this.styles();
 
         return (
-            <div style = {this.styles().card} >
+            <div className={ className } style = {this.styles().card} >
                 <div
                     style = { styles.header }
                     onMouseEnter = { this.onCardEnter }
@@ -143,7 +147,7 @@ const MediaCard = React.createClass({
                 >
                     <div style={ styles.identity}>
                         { this.renderAvatar() }
-                        <div>
+                        <div style={{ width:"100%"}}>
                             <div style={ styles.title }>
                                 { title }
                             </div>
@@ -232,6 +236,7 @@ const MediaCard = React.createClass({
         // title style
         style.title = {
             ...styles.t.body2,
+            width: "100%",
             marginRight: "20px",
             color: this.props.color,
         };
