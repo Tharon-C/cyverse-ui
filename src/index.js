@@ -18,3 +18,4 @@ export { default as InfoBlock } from './InfoBlock';
 export { default as SearchBar } from './SearchBar';
 export { default as FlatButtonConfirm } from './FlatButtonConfirm';
 export { default as Identity } from './Identity';
+export { default as SkeletonList } from './SkeletonList';
