@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Stagger from 'react-css-stagger';
 import Scroll from 'react-scroll';
 import { marg } from './styles';
 
@@ -42,18 +43,26 @@ const MediaCardGroup = React.createClass({
     },
 
     render() {
-        let children = React.Children.map(this.props.children,
+        const children = React.Children.map(
+            this.props.children,
             (child) => React.cloneElement(child, {
                     onExpand: this.onExpand.bind(this, child),
                     isExpanded: this.state.expanded === child,
-                })
-            );
+                }
+            )
+        );
+
         return (
-            <div 
-                style={ marg({ ...this.props}) }
+            <div
+                style={ marg(this.props) }
                 ref="root"
             >
-                { children } 
+                <Stagger
+                    transition="MediaCard__animation"
+                    delay={70}
+                >
+                    { children }
+                </Stagger>
             </div>
         );
     }
