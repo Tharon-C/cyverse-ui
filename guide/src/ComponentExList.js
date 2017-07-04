@@ -1,6 +1,8 @@
 import React from 'react';
 import { P } from 'cyverse-ui';
 import {
+    SearchBarEx,
+    InfoBlockEx,
     MediaCardEx,
     MediaCardGroupEx,
     TabsEx,
@@ -24,6 +26,30 @@ import ButtonMenuExCode from '!raw!./examples/ButtonMenuEx';
 import VerticalMenuExCode from '!raw!./examples/VerticalMenuEx';
 
 const ExampleList = [
+    {
+        name: "SearchBar",
+        desc: (
+            <div>
+                <P>
+                    The SearchBar is used for searches. It has an active state that helps to inform the user a search is affecting the list in question. An optional onClear prop allows the query to be cleared when the user presses the clear button.
+                </P>
+            </div>
+        ),
+        render: SearchBarEx,
+        code: SearchBarExCode,
+    },
+    {
+        name: "InfoBlock",
+        desc: (
+            <div>
+                <P>
+                    The InfoBlock is used everywhere information is displayed to the user that isn't part of an input or title. Usually at the top of a view to explain the purpose of said view. The icon helps isolate the information from the UI.
+                </P>
+            </div>
+        ),
+        render: InfoBlockEx,
+        code: InfoBlockExCode,
+    },
     {
         name: "Pill",
         desc: (
