@@ -15,6 +15,8 @@ import {
     VerticalMenuEx,
 } from './examples';
 
+import SearchBarExCode from '!raw!./examples/SearchBarEx';
+import InfoBlockExCode from '!raw!./examples/InfoBlockEx';
 import MediaCardExCode from '!raw!./examples/MediaCardEx';
 import TabsExCode from '!raw!./examples/TabsEx';
 import MeterGaugeExCode from '!raw!./examples/MeterGaugeEx';

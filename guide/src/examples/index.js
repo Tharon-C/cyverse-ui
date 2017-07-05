@@ -11,4 +11,6 @@ export { default as SubHeaderEx } from './SubHeaderEx.js';
 export { default as TabsEx } from './TabsEx.js';
 export { default as ThemeEx } from './ThemeEx.js';
 export { default as VerticalMenuEx } from './VerticalMenuEx.js';
+export { default as SearchBarEx } from './SearchBarEx.js';
+export { default as InfoBlockEx } from './InfoBlockEx.js';
 
