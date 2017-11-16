@@ -11,17 +11,15 @@ import InfoBlockExCode from '!raw-loader!./InfoBlockEx';
 
 const meta = parse(InfoBlock);
 
-class InfoBlockDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `InfoBlock Example` } >
-                    <InfoBlockEx/>
-                    <CodeBlock text={ InfoBlockExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const InfoBlockDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `InfoBlock Example` } >
+                <InfoBlockEx/>
+                <CodeBlock text={ InfoBlockExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default InfoBlockDoc;

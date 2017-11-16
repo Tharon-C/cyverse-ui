@@ -2,28 +2,26 @@ import React from 'react';
 import { marg } from 'cyverse-ui/styles';
 
 
-export default class ClearFix extends React.Component {
-    render() {
-        const beforeStyle = {
-            display: 'table'
-        };
+export default const ClearFix = props => {
+    const beforeStyle = {
+        display: 'table'
+    };
 
-        const afterStyle = {
-            ...beforeStyle,
-            clear: 'both'
-        };
+    const afterStyle = {
+        ...beforeStyle,
+        clear: 'both'
+    };
 
-        return (
-            <div
-                style={{
-                    ...this.props.style,
-                    ...marg(this.props),
-                }}
-            >
-                <div style={beforeStyle}/>
-                    {this.props.children}
-                <div style={afterStyle}/>
-            </div>
-        );
-    }
-}
+    return (
+        <div
+            style={{
+                ...props.style,
+                ...marg(props),
+            }}
+        >
+            <div style={beforeStyle}/>
+                {props.children}
+            <div style={afterStyle}/>
+        </div>
+    );
+};

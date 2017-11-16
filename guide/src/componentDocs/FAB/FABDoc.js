@@ -9,17 +9,15 @@ import FAB from '!raw-loader!cyverse-ui/FAB';
 import { parse } from 'react-docgen';
 const meta = parse(FAB);
 
-class FABDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `FAB Example` } >
-                    <FABEx/>
-                    <CodeBlock text={ FABExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const FABDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `FAB Example` } >
+                <FABEx/>
+                <CodeBlock text={ FABExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default FABDoc;

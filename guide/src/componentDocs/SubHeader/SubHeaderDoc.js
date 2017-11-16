@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import SubHeader from '!raw-loader!cyverse-ui/SubHeader';
 const meta = parse(SubHeader);
 
-class SubHeaderDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `SubHeader Example` } >
-                    <SubHeaderEx/>
-                    <CodeBlock text={ SubHeaderExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const SubHeaderDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `SubHeader Example` } >
+                <SubHeaderEx/>
+                <CodeBlock text={ SubHeaderExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default SubHeaderDoc;

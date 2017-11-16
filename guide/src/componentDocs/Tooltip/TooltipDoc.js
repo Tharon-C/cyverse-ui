@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import Tooltip from '!raw-loader!cyverse-ui/Tooltip';
 const meta = parse(Tooltip);
 
-class TooltipDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `Tooltip Example` } >
-                    <TooltipEx/>
-                    <CodeBlock text={ TooltipExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const TooltipDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `Tooltip Example` } >
+                <TooltipEx/>
+                <CodeBlock text={ TooltipExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default TooltipDoc;

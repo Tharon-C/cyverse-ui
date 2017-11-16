@@ -7,37 +7,35 @@ import Figure from './Figure';
 const scroller = Scroll.scroller;
 const ScrollAnchor = Scroll.Element;
 
-class ThemeExample extends React.Component {
-    render() {
-        const { component, i, muiTheme } = this.props;
-        const { name, desc } = component;
-        const { 
-            primary1Color
-        } = muiTheme.palette;
+const ThemeExample = props => {
+    const { component, i, muiTheme } = props;
+    const { name, desc } = component;
+    const { 
+        primary1Color
+    } = muiTheme.palette;
 
-        return (
-            <Section
-                mb={ 7 }
-            >
-                <ScrollAnchor
-                    name={ name.replace(/\s+/g, '-') }
-                    style={{
-                        position: "absolute", 
-                        top:"-50px" 
-                    }}
-                />
+    return (
+        <Section
+            mb={ 7 }
+        >
+            <ScrollAnchor
+                name={ name.replace(/\s+/g, '-') }
+                style={{
+                    position: "absolute", 
+                    top:"-50px" 
+                }}
+            />
 
-                <Hr mb={ 6 }/>
-                <Title 
-                    h1
-                    headline
-                > 
-                    { name } 
-                </Title>
-                { desc } 
-            </Section>
-        )
-    }
-}
+            <Hr mb={ 6 }/>
+            <Title 
+                h1
+                headline
+            > 
+                { name } 
+            </Title>
+            { desc } 
+        </Section>
+    )
+};
 
 export default muiThemeable()(ThemeExample);

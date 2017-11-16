@@ -6,24 +6,22 @@ import ComponentLinkList from './ComponentLinkList';
 import ThemeLinkList from './ThemeLinkList';
 import IconLink from './IconLink';
 
-class SideNav extends React.Component {
-    render() {
-        return (
-            <SideBar isOpen >
-                <Title h1
-                    title
-                    mb={ 2 }
-                    ps={ 3 }
-                >
-                    Table of Contents
-                </Title>
-                <Divider/>
-                <ThemeLinkList/>
-                <ComponentLinkList/>
-                <IconLink/>
-            </SideBar>
-        )
-    }
-}
+const SideNav = props => {
+    return (
+        <SideBar isOpen >
+            <Title h1
+                title
+                mb={ 2 }
+                ps={ 3 }
+            >
+                Table of Contents
+            </Title>
+            <Divider/>
+            <ThemeLinkList/>
+            <ComponentLinkList/>
+            <IconLink/>
+        </SideBar>
+    )
+};
 
 export default SideNav

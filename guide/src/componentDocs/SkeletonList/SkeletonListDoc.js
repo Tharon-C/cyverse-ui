@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import SkeletonList from '!raw-loader!cyverse-ui/SkeletonList';
 const meta = parse(SkeletonList);
 
-class SkeletonListDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `SkeletonList Example` } >
-                    <SkeletonListEx/>
-                    <CodeBlock text={ SkeletonListExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const SkeletonListDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `SkeletonList Example` } >
+                <SkeletonListEx/>
+                <CodeBlock text={ SkeletonListExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default SkeletonListDoc;

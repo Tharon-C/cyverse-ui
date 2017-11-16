@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import MeterGauge from '!raw-loader!cyverse-ui/MeterGauge';
 const meta = parse(MeterGauge);
 
-class MeterGaugeDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `MeterGauge Example` } >
-                    <MeterGaugeEx/>
-                    <CodeBlock text={ MeterGaugeExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const MeterGaugeDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `MeterGauge Example` } >
+                <MeterGaugeEx/>
+                <CodeBlock text={ MeterGaugeExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default MeterGaugeDoc;

@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import MediaCardGroup from '!raw-loader!cyverse-ui/MediaCardGroup';
 const meta = parse(MediaCardGroup);
 
-class MediaCardGroupDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `MediaCard Example` } >
-                    <MediaCardGroupEx/>
-                    <CodeBlock text={ MediaCardGroupExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const MediaCardGroupDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `MediaCard Example` } >
+                <MediaCardGroupEx/>
+                <CodeBlock text={ MediaCardGroupExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default MediaCardGroupDoc;

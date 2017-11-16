@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import ProgressAvatar from '!raw-loader!cyverse-ui/ProgressAvatar';
 const meta = parse(ProgressAvatar);
 
-class ProgressAvatarDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `ProgressAvatar Example` } >
-                    <ProgressAvatarEx/>
-                    <CodeBlock text={ ProgressAvatarExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const ProgressAvatarDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `ProgressAvatar Example` } >
+                <ProgressAvatarEx/>
+                <CodeBlock text={ ProgressAvatarExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default ProgressAvatarDoc;

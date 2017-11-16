@@ -12,17 +12,15 @@ import { parse } from 'react-docgen';
 import Pill from '!raw-loader!cyverse-ui/Pill';
 const meta = parse(Pill);
 
-class PillDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `Pill Example` } >
-                    <PillEx/>
-                    <CodeBlock text={ PillExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const PillDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `Pill Example` } >
+                <PillEx/>
+                <CodeBlock text={ PillExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default PillDoc;

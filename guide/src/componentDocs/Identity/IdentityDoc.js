@@ -9,17 +9,15 @@ import { parse } from 'react-docgen';
 import Identity from '!raw-loader!cyverse-ui/Identity';
 const meta = parse(Identity);
 
-class IdentityDoc extends React.Component {
-    render() {
-        return (
-            <ComponentDoc meta={ meta } >
-                <Figure caption={ `Identity Example` } >
-                    <IdentityEx/>
-                    <CodeBlock text={ IdentityExCode } />
-                </Figure>
-            </ComponentDoc>
-        )
-    }
-}
+const IdentityDoc = props => {
+    return (
+        <ComponentDoc meta={ meta } >
+            <Figure caption={ `Identity Example` } >
+                <IdentityEx/>
+                <CodeBlock text={ IdentityExCode } />
+            </Figure>
+        </ComponentDoc>
+    )
+};
 
 export default IdentityDoc;
