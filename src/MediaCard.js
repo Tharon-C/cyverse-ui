@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import VerticalMenu from './VerticalMenu';
 import Hr from './Hr';
+import Identity from './Identity';
+import ListCard from './ListCard';
 import styles from './styles/styles';
 import marg from './styles/marg';
 
@@ -194,15 +196,14 @@ class MediaCard extends React.Component {
         const {
             title,
             subTitle,
-            titleInfo,
             summary,
-            className
+            ...rest,
         } = this.props;
 
         const styles = this.styles();
 
         return (
-            <div className={ className } style = {this.styles().card} >
+            <ListCard { ...rest }>
                 <div
                     style = { styles.header }
                     onMouseEnter = { this.onCardEnter }
@@ -210,21 +211,11 @@ class MediaCard extends React.Component {
                     onClick = {this.onExpand}
                 >
                     <div style={ styles.identity}>
-                        { this.renderAvatar() }
-                        <div style={ styles.titleInfo }>
-                            <div style={ styles.title }>
-                                { title }
-                            </div>
-
-                            <div style={ styles.subTitle }>
-                                { subTitle }
-                            </div>
-
-                            <div>
-                                { titleInfo }
-                            </div>
-                        </div>
-
+                        <Identity
+                            image = { this.renderAvatar() }
+                            primaryText = { title }
+                            secondaryText = { subTitle }
+                        />
                     </div>
 
                     <div style={ styles.summary }>
@@ -239,31 +230,12 @@ class MediaCard extends React.Component {
 
                 </div>
                 { this.detail() }
-            </div>
+            </ListCard>
         )
     }
 
     styles = () => {
         let style = {};
-
-        // card style
-        let cardShadow = styles.boxShadow.li
-        let openStyle = {};
-        if (this.props.isExpanded) {
-            cardShadow = styles.boxShadow.lg
-            openStyle = {
-                margin: "40px -20px",
-                borderLeft: "solid 5px #0971ab"
-            };
-        }
-        style.card = {
-            ...openStyle,
-            position: "relative",
-            transition: "all ease .1s",
-            background: "white",
-            ...cardShadow,
-        };
-
         // header style
         style.header = {
             display: "flex",

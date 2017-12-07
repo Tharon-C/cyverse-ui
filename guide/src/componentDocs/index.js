@@ -14,3 +14,4 @@ export { default as SubHeaderDoc } from './SubHeader/SubHeaderDoc';
 export { default as VerticalMenuDoc } from './VerticalMenu/VerticalMenuDoc';
 export { default as TooltipDoc } from './Tooltip/TooltipDoc';
 export { default as FABDoc } from './FAB/FABDoc.js';
+export { default as ListCardDoc } from './ListCard/ListCardDoc';
