@@ -17,6 +17,7 @@ const styleSheet = () => (
         }
     ))
 );
+
 /**
  * ListCardDetail is the area below ListCardHeader where the details on the ListCard lives.
  *
@@ -43,7 +44,7 @@ ListCardDetail.displayName = "ListCardDetail";
 
 ListCardDetail.propTypes = {
     /**
-     * Expects...
+     * Pass any content you would like to render in the ListCard detail as children.
      */
     children: PropTypes.node
 };
