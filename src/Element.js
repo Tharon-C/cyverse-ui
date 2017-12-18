@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import filterDomProps from 'filter-react-dom-props';
 import { createStyleSheet } from "jss-theme-reactor";
 import getStyleManager from "./styles/getStyleManager";
 import muiThemeable from "material-ui/styles/muiThemeable";
@@ -50,7 +51,7 @@ class Element extends React.Component {
 
         return (
             <Tag
-                {...rest}
+                {...filterDomProps(rest)}
                 style={{ ...style, ...this.styles()}}
                 onClick={this.clickHandler}
             >

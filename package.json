@@ -29,6 +29,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
+    "filter-react-dom-props": "0.0.2",
     "jss": "^7.1.5",
     "jss-preset-default": "^2.0.0",
     "jss-theme-reactor": "^0.11.1",
